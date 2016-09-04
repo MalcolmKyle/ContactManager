@@ -80,3 +80,5 @@ c:\users\malcolm\documents\visual studio 2015\Projects\ContactManager\ContactMan
 c:\users\malcolm\documents\visual studio 2015\Projects\ContactManager\ContactManager\obj\Debug\ContactManager.csprojResolveAssemblyReference.cache
 c:\users\malcolm\documents\visual studio 2015\Projects\ContactManager\ContactManager\obj\Debug\ContactManager.dll
 c:\users\malcolm\documents\visual studio 2015\Projects\ContactManager\ContactManager\obj\Debug\ContactManager.pdb
+C:\Users\Malcolm\documents\visual studio 2015\Projects\ContactManager\ContactManager\obj\Debug\ContactManager.Migrations.Initial.resources
+C:\Users\Malcolm\documents\visual studio 2015\Projects\ContactManager\ContactManager\obj\Debug\ContactManager.csproj.GenerateResource.Cache
