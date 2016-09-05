@@ -37,6 +37,7 @@ namespace ContactManager.Controllers
         }
 
         // GET: Contacts/Create
+        [Authorize(Roles ="canEdit")]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +48,7 @@ namespace ContactManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "canEdit")]
         public ActionResult Create([Bind(Include = "ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
         {
             if (ModelState.IsValid)
@@ -60,6 +62,7 @@ namespace ContactManager.Controllers
         }
 
         // GET: Contacts/Edit/5
+        [Authorize(Roles = "canEdit")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +82,7 @@ namespace ContactManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "canEdit")]
         public ActionResult Edit([Bind(Include = "ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
         {
             if (ModelState.IsValid)
@@ -91,6 +95,7 @@ namespace ContactManager.Controllers
         }
 
         // GET: Contacts/Delete/5
+        [Authorize(Roles = "canEdit")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +113,7 @@ namespace ContactManager.Controllers
         // POST: Contacts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "canEdit")]
         public ActionResult DeleteConfirmed(int id)
         {
             Contact contact = db.Contacts.Find(id);

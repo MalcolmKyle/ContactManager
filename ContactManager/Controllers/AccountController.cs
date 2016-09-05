@@ -155,6 +155,7 @@ namespace ContactManager.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                   
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -374,6 +375,13 @@ namespace ContactManager.Controllers
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+                        /*
+                         * This will add your newly registered account to the canEdit role.
+                         * Anyone who finds your web app's URL and has a Google ID can then register and update your database.
+                         * To prevent other people from doing that, you can stop the site.
+                         * You'll be able to verify who is in the canEdit role by examining the database.
+                         */
+                        //await UserManager.AddToRoleAsync(user.Id, "canEdit");
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
